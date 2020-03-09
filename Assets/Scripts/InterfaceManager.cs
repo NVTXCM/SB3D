@@ -11,11 +11,14 @@ public class InterfaceManager : MonoBehaviour
     public GameObject panelBB;
     public GameObject panelPKKQ;
     public GameObject panelHQ;
-    public GameObject panelPB; 
+    public GameObject panelPB;
+    public Camera mainCam;
 #endregion variable
     // Start is called before the first frame update
     void Start()
+        
     {
+       
         SetViewHidePanel(panelTerrain);
     }
 
@@ -34,5 +37,10 @@ public class InterfaceManager : MonoBehaviour
             panelSCH.gameObject.SetActive(false);
             panelTerrain.gameObject.SetActive(false);
             panel.gameObject.SetActive(true);
+        }
+
+    public void EnableDisableCameraController(bool bSet) 
+        {
+            mainCam.GetComponent<maxCamera>().enabled = bSet;
         }
 }
